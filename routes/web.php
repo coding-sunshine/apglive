@@ -1,9 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
-Route::view('/', 'welcome');
-
 
 if(config('settings.auth')) {
     Route::view('dashboard', 'dashboard')
@@ -17,7 +15,7 @@ if(config('settings.auth')) {
     require __DIR__ . '/auth.php';
 }
 
-
+Route::get('/', HomeController::class);
 
 
 
