@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'build', // Change this to your desired output path
+        assetsDir: 'assets', // Optional: customize assets directory name
+        manifest: true,
+    },
 });
