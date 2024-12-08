@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-if(config('settings.auth')) {
+if (config('settings.auth')) {
     Route::view('dashboard', 'dashboard')
         ->middleware(['auth', 'verified'])
         ->name('dashboard');
@@ -16,6 +16,3 @@ if(config('settings.auth')) {
 }
 
 Route::get('/', HomeController::class);
-
-
-
