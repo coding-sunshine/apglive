@@ -1,3 +1,4 @@
 <x-frontend-layout>
-    About Page Content
+    Listings Page Content
+    @dd($lots)
 </x-frontend-layout>

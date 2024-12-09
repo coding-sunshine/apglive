@@ -25,6 +25,7 @@ class FusionCrmService
 
     protected $apiBaseUrl;
     protected $apiProjectsUrl;
+    protected $apiLotsUrl;
 
     protected $headers = [];
     protected $subscriberId;
@@ -33,6 +34,7 @@ class FusionCrmService
     {
         $this->apiBaseUrl = config('services.fusion.api_url');
         $this->apiProjectsUrl = '/projects'; // Adjust the endpoint as needed
+        $this->apiLotsUrl = '/lots'; // Adjust the endpoint as needed
         $this->headers = [
             'Content-Type' => 'application/json',
             'API-KEY' => config('services.fusion.key'),
@@ -52,10 +54,28 @@ class FusionCrmService
             ->json();
     }
 
+    public function fetchLots($params = [])
+    {
+        $getParams = array_merge($params, [
+            'subscriber' => $this->subscriberId
+        ]);
+        return Http::retry(3, 100)
+            ->withHeaders($this->headers)
+            ->get($this->apiBaseUrl . $this->apiLotsUrl, $getParams)
+            ->json();
+    }
+
     public function getCachedProjects($cacheKey, $params, $cacheDuration = [7200, 7500])
     {
         return Cache::flexible($cacheKey, $cacheDuration, function () use ($params) {
             return $this->fetchProjects($params);
+        });
+    }
+
+    public function getCachedLots($cacheKey, $params, $cacheDuration = [7200, 7500])
+    {
+        return Cache::flexible($cacheKey, $cacheDuration, function () use ($params) {
+            return $this->fetchLots($params);
         });
     }
 
@@ -85,5 +105,27 @@ class FusionCrmService
         }
 
         return $this->getCachedProjects($cacheKey, $params, $cacheDuration);
+    }
+
+    public function getLots($params, $cacheDuration = [7200, 7500])
+    {
+        if (!is_array($params)) {
+            // Handle the case where $params is not an array
+            $params = [];
+        }
+
+        // Generate a unique cache key based on the parameters
+        $cacheKey = 'lotsSearch_' . md5(json_encode($params));
+
+        return $this->getCachedLots($cacheKey, $params, $cacheDuration);
+    }
+
+    public function getLotDetail($propertyId)
+    {
+        $url = $this->apiBaseUrl . $this->apiLotsUrl . '/' . $propertyId;
+        return Http::retry(3, 100)
+            ->withHeaders($this->headers)
+            ->get($url, ['subscriber' => $this->subscriberId])
+            ->json();
     }
 }

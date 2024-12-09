@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ListingDetailController;
 use Illuminate\Support\Facades\Route;
 
 if (config('settings.auth')) {
@@ -16,3 +18,5 @@ if (config('settings.auth')) {
 }
 
 Route::get('/', HomeController::class);
+Route::get('/listings', ListingController::class);
+Route::get('/property/{propertyId}', ListingDetailController::class);

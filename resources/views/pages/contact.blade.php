@@ -1,3 +1,3 @@
 <x-frontend-layout>
-    About Page Content
+    Contact Page Content
 </x-frontend-layout>
