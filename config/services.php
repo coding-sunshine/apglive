@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'fusion' => [
+        'api_url' => env('FUSION_API_URL'),
+        'key' => env('FUSION_API_KEY'),
+        'domain' => env('FUSION_API_DOMAIN'),
+        'subscriber_id' => env('FUSION_API_SUBSCRIBER_ID'),
+    ],
+
 ];
