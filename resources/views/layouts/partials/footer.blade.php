@@ -20,8 +20,8 @@
                     <h3 class="widget-title mb-4">Contact Info</h3>
                     <ul>
                         <li>For any inquiries<br> please contact Support.</li>
-                        <li>+61-467 862 576</li>
-                        <li>info@addresspropertygroup.com.au</li>
+                        <li>{{ config('settings.contact.phone') }}</li>
+                        <li>{{ config('settings.contact.email') }}</li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +46,7 @@
     <div class="container">
         <div class="row row-cols-md-2 row-cols-1">
             <div class="col">
-                <span class="text-white">© 2024 Address Property Group All right reserved</span>
+                <span class="text-white">© {{ date("Y")}} Address Property Group All right reserved</span>
             </div>
             <div class="col">
                 <ul class="line-menu float-end list-color-gray">
