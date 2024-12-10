@@ -1,0 +1,67 @@
+<!--============== Footer Section Start ==============-->
+<footer class="full-row footer-default-dark bg-footer footer" style="padding-bottom: 30px">
+    <div class="container">
+        <div class="row">
+            <div class="col row-cols-4">
+                <div class="footer-widget mb-4">
+                    <div class="footer-logo mb-4">
+                        <a href="#"><img src="/assets/images/apg_logo_black_bg.png" alt="Image not found!" /></a>
+                    </div>
+                    <p>At Address Property Group, our mission is to empower Australians in achieving financial freedom and security through strategic property investments.</p>
+                </div>
+                <div class="footer-widget media-widget mb-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="col row-cols-4">
+                <div class="footer-widget contact-widget mb-4">
+                    <h3 class="widget-title mb-4">Contact Info</h3>
+                    <ul>
+                        <li>Lorem Ipsum is simply dummy text of<br> the printing and typesetting industry.</li>
+                        <li>+1 999-999-9999</li>
+                        <li>info@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col row-cols-4">
+                <div class="footer-widget footer-nav mb-4">
+                    <h3 class="widget-title mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="listing.html">Prorperty Listing</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--============== Footer Section End ==============-->
+
+<!--============== Copyright Section Start ==============-->
+<div class="copyright bg-footer text-default py-4">
+    <div class="container">
+        <div class="row row-cols-md-2 row-cols-1">
+            <div class="col">
+                <span class="text-white">© 2024 Address Property Group All right reserved</span>
+            </div>
+            <div class="col">
+                <ul class="line-menu float-end list-color-gray">
+                    <li><a href="#">Privacy & Policy </a></li>
+                    <li>|</li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--============== Copyright Section End ==============-->
+
+<!-- Scroll to top -->
+<div class="scroll-top-vertical xs-mx-none" id="scroll">Go Top <i class="ms-2 fa-solid fa-arrow-right-long"></i></div>
+<!-- End Scroll To top -->

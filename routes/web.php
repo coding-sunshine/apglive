@@ -18,5 +18,5 @@ if (config('settings.auth')) {
 }
 
 Route::get('/', HomeController::class);
-Route::get('/listings', ListingController::class);
-Route::get('/property/{propertyId}', ListingDetailController::class);
+Route::get('/listings', ListingController::class)->name('listings');
+Route::get('/property/{propertyId}', ListingDetailController::class)->name('property');
