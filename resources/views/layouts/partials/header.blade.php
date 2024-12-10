@@ -5,7 +5,7 @@
             <div class="row row-cols-md-2 row-cols-1">
                 <div class="col">
                     <ul class="top-contact list-color-white">
-                        <li><a href="tel:+61-467 862 576"><i class="fa fa-phone" aria-hidden="true"></i> Need Support ? +61-467 862 576</a></li>
+                        <li><a href="tel:{{ config('settings.contact.phone') }}"><i class="fa fa-phone" aria-hidden="true"></i> Need Support ? {{ config('settings.contact.phone') }}</a></li>
                     </ul>
                 </div>
                 @if(config('settings.auth'))
