@@ -1,5 +1,7 @@
 <x-frontend-layout>
-    @include('layouts.partials.hero')
+
+    <livewire:hero-slider />
+
 
     @include('layouts.partials.searchbar')
 

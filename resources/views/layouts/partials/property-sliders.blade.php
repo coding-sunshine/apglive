@@ -223,10 +223,6 @@
 </div>
 <!--============== Recent Property End ==============-->
 
-
-
-
-
 <!--============== Most Popular Property Start ==============-->
 <div class="full-row">
     <div class="container">
