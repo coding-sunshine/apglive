@@ -1,9 +1,9 @@
 <?php
 
 use function Laravel\Folio\name;
-name('faq');
+name('tnc');
 
 ?>
 <x-frontend-layout>
-    FAQ Page Content
+    T&C Page Content
 </x-frontend-layout>

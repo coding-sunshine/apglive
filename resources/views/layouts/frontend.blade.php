@@ -5,8 +5,12 @@
     @include('layouts.partials.styles')
 </head>
 <body>
-    <div id="page_wrapper" class="bg-white">
-        @include('layouts.partials.header')
+    <div id="page_wrapper" class="{{ (Route::currentRouteName() == 'home')? 'bg-white' : 'bg-light'}}">
+        @if(Route::currentRouteName() == 'home')
+            @include('layouts.partials.header-home')
+        @else
+            @include('layouts.partials.header')
+        @endif
 
         {{ $slot }}
 

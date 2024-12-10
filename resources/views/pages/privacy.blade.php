@@ -1,9 +1,9 @@
 <?php
 
 use function Laravel\Folio\name;
-name('faq');
+name('privacy');
 
 ?>
 <x-frontend-layout>
-    FAQ Page Content
+    privacy Page Content
 </x-frontend-layout>
