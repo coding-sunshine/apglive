@@ -11,6 +11,22 @@
     ]"/>
 <!--============== Featured Property End ==============-->
 
+<!--============== coliving Property Start ==============-->
+<livewire:property-slider title="Coliving Properties" type="colivingProjects"  :attr="[
+        'limit' =>12,
+        'coliving' => '1',
+    ]"/>
+<!--============== coliving Property End ==============-->
+
+<!--============== cashFlowPositive Property Start ==============-->
+<livewire:property-slider title="Cash Flow Positive Properties" type="cashFlowPositiveProjects"  :attr="[
+        'limit' =>12,
+        'is_cashflow_positive' => '1',
+    ]"/>
+<!--============== cashFlowPositive Property End ==============-->
+
+<!--Hot properties - properties less than 550k-->
+
 <!--============== NDIS Property Start ==============-->
     <livewire:property-slider title="NDIS Properties" type="ndisProjects"  :attr="[
         'limit' =>12,
@@ -32,20 +48,7 @@
     ]"/>
 <!--============== firb Property End ==============-->
 
-#colivingProjects
 
-<!--============== coliving Property Start ==============-->
-<livewire:property-slider title="Coliving Properties" type="colivingProjects"  :attr="[
-        'limit' =>12,
-        'coliving' => '1',
-    ]"/>
-<!--============== coliving Property End ==============-->
 
-<!--============== cashFlowPositive Property Start ==============-->
-<livewire:property-slider title="Cash Flow Positive Properties" type="cashFlowPositiveProjects"  :attr="[
-        'limit' =>12,
-        'is_cashflow_positive' => '1',
-    ]"/>
-<!--============== cashFlowPositive Property End ==============-->
 
 

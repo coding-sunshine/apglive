@@ -128,4 +128,16 @@ class FusionCrmService
             ->get($url, ['subscriber' => $this->subscriberId])
             ->json();
     }
+
+    public function getProjectDetail($projectId)
+    {
+        $url = $this->apiBaseUrl . $this->apiProjectsUrl . '/' . $projectId;
+        return Http::retry(3, 100)
+            ->withHeaders($this->headers)
+            ->get($url, [
+                'subscriber' => $this->subscriberId,
+                'related' => 'status,projecttype,address,developer,similar_projects'
+            ])
+            ->json();
+    }
 }

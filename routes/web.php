@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ListingDetailController;
+use App\Http\Controllers\ProjectDetailController;
 use Illuminate\Support\Facades\Route;
 
 if (config('settings.auth')) {
@@ -20,3 +21,4 @@ if (config('settings.auth')) {
 Route::get('/', HomeController::class)->name('home');
 Route::get('/listings', ListingController::class)->name('listings');
 Route::get('/property/{propertyId}', ListingDetailController::class)->name('property');
+Route::get('/project/{projectId}', ProjectDetailController::class)->name('project');
