@@ -65,9 +65,12 @@ class FusionCrmService
             ->json();
     }
 
-    public function getCachedProjects($cacheKey, $params, $cacheDuration = [7200, 7500])
+    public function getCachedProjects($cacheKey, $params, $cacheDuration = [7200, 7500], $getprojecttype = null)
     {
-        return Cache::flexible($cacheKey, $cacheDuration, function () use ($params) {
+        return Cache::flexible($cacheKey, $cacheDuration, function () use ($params, $getprojecttype, $cacheKey) {
+            if ($getprojecttype) {
+                return $this->getProjectsByType($getprojecttype['title'], $params);
+            }
             return $this->fetchProjects($params);
         });
     }
@@ -94,6 +97,8 @@ class FusionCrmService
         $params = array_merge(['projecttype_id' => $projectTypeId, 'limit' => $limit], $additionalParams);
         $cacheKey = $type . 'Projects';
 
+        dump($params);
+
         return $this->getCachedProjects($cacheKey, $params, $cacheDuration);
     }
 
@@ -104,7 +109,15 @@ class FusionCrmService
             $params = [];
         }
 
-        return $this->getCachedProjects($cacheKey, $params, $cacheDuration);
+        // check if $cacheKey is in the $projectTypes  array, if yes then call getProjectsByType method
+        $getprojecttype = null;
+        if (array_key_exists($cacheKey, $this->projectTypes)) {
+            $getprojecttype =  ['title'=> $cacheKey];
+        }
+
+        $cacheKey = $cacheKey. '_' . md5(json_encode($params));
+
+        return $this->getCachedProjects($cacheKey, $params, $cacheDuration, $getprojecttype );
     }
 
     public function getLots($params, $cacheDuration = [7200, 7500])

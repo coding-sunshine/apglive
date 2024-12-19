@@ -56,7 +56,7 @@ new class extends Component {
                     <div class="me-auto">
                         <h2 class="d-table">{{ $title }}</h2>
                     </div>
-                    <a href="{{ route('listings', ['type' => $this->type]) }}" class="ms-auto btn-link">View All Properties</a>
+                    <a href="{{ route('listings', array_merge(['type' => $this->type],$this->attr)) }}" class="ms-auto btn-link">View All Properties</a>
                 </div>
             </div>
         </div>

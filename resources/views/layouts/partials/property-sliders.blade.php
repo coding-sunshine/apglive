@@ -1,3 +1,9 @@
+<!--============== Duplex Property Start ==============-->
+<livewire:property-slider title="Duplex  Properties" type="duplex"  :attr="[
+        'limit' =>12,
+    ]"/>
+<!--============== Duplex Property End ==============-->
+
 <!--============== Recent Property Start ==============-->
     <livewire:property-slider title="Recent Properties" type="latestProjects" :attr="[
         'limit' =>12
@@ -14,7 +20,7 @@
 <!--============== coliving Property Start ==============-->
 <livewire:property-slider title="Coliving Properties" type="colivingProjects"  :attr="[
         'limit' =>12,
-        'coliving' => '1',
+        'co_living' => '1',
     ]"/>
 <!--============== coliving Property End ==============-->
 
@@ -25,8 +31,15 @@
     ]"/>
 <!--============== cashFlowPositive Property End ==============-->
 
-<!--Hot properties - properties less than 550k-->
-
+<!--============== Affordable Property Start ==============-->
+<livewire:property-slider title="Affordable Properties" type="affordableProjects" :attr="[
+        'limit' =>12,
+        'range' => '1',
+        'projects_rage' => '1',
+        'selected_min_price' => '10000',
+        'selected_max_price' => '600000',
+    ]"/>
+<!--============== Affordable Property End ==============-->
 <!--============== NDIS Property Start ==============-->
     <livewire:property-slider title="NDIS Properties" type="ndisProjects"  :attr="[
         'limit' =>12,
