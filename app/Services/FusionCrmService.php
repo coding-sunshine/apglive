@@ -75,9 +75,12 @@ class FusionCrmService
         });
     }
 
-    public function getCachedLots($cacheKey, $params, $cacheDuration = [7200, 7500])
+    public function getCachedLots($cacheKey, $params, $cacheDuration = [7200, 7500], $getprojecttype = null)
     {
-        return Cache::flexible($cacheKey, $cacheDuration, function () use ($params) {
+        return Cache::flexible($cacheKey, $cacheDuration, function () use ($params, $getprojecttype) {
+            if ($getprojecttype) {
+                return $this->getLotsByProjectType($getprojecttype['title'], $params);
+            }
             return $this->fetchLots($params);
         });
     }
@@ -102,13 +105,21 @@ class FusionCrmService
         return $this->getCachedProjects($cacheKey, $params, $cacheDuration);
     }
 
-    public function getProjects($params, $cacheKey, $cacheDuration = [7200, 7500])
+    public function getLotsByProjectType($type, $additionalParams = [], $cacheDuration = [7200, 7500], $limit = 12)
     {
-        if (!is_array($params)) {
-            // Handle the case where $params is not an array
-            $params = [];
+        $projectTypeId = $this->getProjectTypeId($type);
+        if ($projectTypeId === null) {
+            return [];
         }
 
+        $params = array_merge(['projecttype_id' => $projectTypeId, 'limit' => $limit], $additionalParams);
+        $cacheKey = $type . 'Lots';
+
+        return $this->getCachedLots($cacheKey, $params, $cacheDuration);
+    }
+
+    public function getProjects($params = [], $cacheKey, $cacheDuration = [7200, 7500])
+    {
         // check if $cacheKey is in the $projectTypes  array, if yes then call getProjectsByType method
         $getprojecttype = null;
         if (array_key_exists($cacheKey, $this->projectTypes)) {
@@ -120,17 +131,18 @@ class FusionCrmService
         return $this->getCachedProjects($cacheKey, $params, $cacheDuration, $getprojecttype );
     }
 
-    public function getLots($params, $cacheDuration = [7200, 7500])
+    public function getLots($params = [], $cacheKey = 'lotsSearch'  ,$cacheDuration = [7200, 7500])
     {
-        if (!is_array($params)) {
-            // Handle the case where $params is not an array
-            $params = [];
+        // check if $cacheKey is in the $projectTypes  array, if yes then call getProjectsByType method
+        $getprojecttype = null;
+        if (array_key_exists($cacheKey, $this->projectTypes)) {
+            $getprojecttype =  ['title'=> $cacheKey];
         }
 
         // Generate a unique cache key based on the parameters
-        $cacheKey = 'lotsSearch_' . md5(json_encode($params));
+        $cacheKey = $cacheKey. '_' . md5(json_encode($params));
 
-        return $this->getCachedLots($cacheKey, $params, $cacheDuration);
+        return $this->getCachedLots($cacheKey, $params, $cacheDuration, $getprojecttype);
     }
 
     public function getLotDetail($propertyId)

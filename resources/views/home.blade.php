@@ -1,11 +1,11 @@
 <x-frontend-layout>
 
-    <livewire:hero-slider />
+    <livewire:hero-slider/>
 
 
     @include('layouts.partials.searchbar')
 
-    @include('layouts.partials.property-sliders')
+    @include('layouts.partials.sliders')
 
     @include('layouts.partials.home-about')
 

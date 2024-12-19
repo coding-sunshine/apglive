@@ -8,7 +8,7 @@ new class extends Component {
     public $title = '';
     public $type = '';
     public $attr = [];
-    public $lots = [];
+    public $projects = [];
     private $fusionCrmService;
 
     public function mount()
@@ -19,28 +19,28 @@ new class extends Component {
     public function fetchProjects()
     {
         $this->fusionCrmService = new FusionCrmService();
-        $this->lots = $this->fusionCrmService->getLots($this->attr, $this->type)['data'];
-        foreach ($this->lots as $key => $lot) {
-            $this->lots[$key]['price'] = number_format($lot['price'], 0, '.', ',');
-            $this->lots[$key]['updated_at'] = Carbon::parse($lot['updated_at'])->diffForHumans();
-            $this->lots[$key]['tags'] = [];
-            if ($lot['project']['is_featured']) {
-                $this->lots[$key]['tags'][] = 'Featured';
+        $this->projects = $this->fusionCrmService->getProjects($this->attr, $this->type)['data'];
+        foreach ($this->projects as $key => $project) {
+            $this->projects[$key]['avg_price'] = number_format($project['avg_price'], 0, '.', ',');
+            $this->projects[$key]['updated_at'] = Carbon::parse($project['updated_at'])->diffForHumans();
+            $this->projects[$key]['tags'] = [];
+            if ($project['is_featured']) {
+                $this->projects[$key]['tags'][] = 'Featured';
             }
-            if ($lot['project']['is_cashflow_positive']) {
-                $this->lots[$key]['tags'][] = 'Cash Flow Positive';
+            if ($project['is_cashflow_positive']) {
+                $this->projects[$key]['tags'][] = 'Cash Flow Positive';
             }
-            if ($lot['project']['is_ndis']) {
-                $this->lots[$key]['tags'][] = 'NDIS';
+            if ($project['is_ndis']) {
+                $this->projects[$key]['tags'][] = 'NDIS';
             }
-            if ($lot['project']['is_smsf']) {
-                $this->lots[$key]['tags'][] = 'SMSF';
+            if ($project['is_smsf']) {
+                $this->projects[$key]['tags'][] = 'SMSF';
             }
-            if ($lot['project']['is_firb']) {
-                $this->lots[$key]['tags'][] = 'FIRB';
+            if ($project['is_firb']) {
+                $this->projects[$key]['tags'][] = 'FIRB';
             }
-            if ($lot['project']['is_co_living']) {
-                $this->lots[$key]['tags'][] = 'Coliving';
+            if ($project['is_co_living']) {
+                $this->projects[$key]['tags'][] = 'Coliving';
             }
         }
     }
@@ -63,14 +63,14 @@ new class extends Component {
         <div class="row">
             <div class="col">
                 <div class="3block-carusel nav-disable owl-carousel">
-                    @foreach($this->lots as $lot)
+                    @foreach($this->projects as $project)
                         <div class="item">
                             <!-- Property Grid -->
                             <div class="property-grid-1 property-block bg-white transation-this">
                                 <div
                                     class="overflow-hidden position-relative transation thumbnail-img bg-secondary hover-img-zoom">
                                     <div class="cata position-absolute">
-                                        @foreach($lot['tags'] as $tag)
+                                        @foreach($project['tags'] as $tag)
                                             @php
                                                 $tagClass = match($tag) {
                                                     'Featured' => 'bg-primary',
@@ -85,11 +85,11 @@ new class extends Component {
                                             <span class="sale {{ $tagClass }} text-white">{{ $tag }}</span>
                                         @endforeach
                                     </div>
-                                    <a href="{{ route('project' , $lot['id'] ) }}"><img
-                                            src="{{ $lot['project']['first_image_url'] ?? '/assets/images/no-image.png' }}"
-                                            alt="{{ $lot['property_type'] ?? '' }}" style="height: 250px;"></a>
-                                    <a href="{{ route('listings' , ['type' =>  $lot['property_type'] ] ) }}" class="listing-ctg text-white"><i
-                                            class="fa-solid fa-building"></i><span>{{  $lot['property_type'] ?? '' }}</span></a>
+                                    <a href="{{ route('project' , $project['id'] ) }}"><img
+                                            src="{{ $project['first_image_url'] ?? '/assets/images/no-image.png' }}"
+                                            alt="{{ $project['pt_title'] ?? '' }}" style="height: 250px;"></a>
+                                    <a href="{{ route('listings' , ['type' => $project['pt_title'] ] ) }}" class="listing-ctg text-white"><i
+                                            class="fa-solid fa-building"></i><span>{{ $project['pt_title'] ?? '' }}</span></a>
                                     <!--
                                     <ul class="position-absolute quick-meta">
                                         <li>
@@ -107,21 +107,21 @@ new class extends Component {
                                 </div>
                                 <div class="property_text p-4">
                                     <span
-                                        class="listing-price">${{ $lot['price'] ?? 'N/A' }}<small> </small></span>
-                                    <h5 class="listing-title"><a href="{{ route('property' , $lot['id'] ) }}">{{ 'Lot - '. $lot['title'].'-'.$lot['project']['title'] ?? 'Property' }}</a></h5>
-                                    <span class="listing-location"><i class="fas fa-map-marker-alt"></i>{{ str($lot['project']['full_address'])->rtrim(',') ?? 'N/A' }}</span>
+                                        class="listing-price">${{ $project['avg_price'] ?? 'N/A' }}<small> </small></span>
+                                    <h5 class="listing-title"><a href="{{ route('project' , $project['id'] ) }}">{{ $project['title'] ?? 'Property' }}</a></h5>
+                                    <span class="listing-location"><i class="fas fa-map-marker-alt"></i>{{ $project['full_address'] ?? 'N/A' }}</span>
                                     <ul class="d-flex quantity font-fifteen">
                                         <li title="Beds"><span><i
-                                                    class="fa-solid fa-bed"></i></span>{{ $lot['bedrooms'] ?? $lot['project']['min_bedrooms'] ?? 'N/A' }}
+                                                    class="fa-solid fa-bed"></i></span>{{ $project['bedrooms'] ?? $project['min_bedrooms'] ?? 'N/A' }}
                                         </li>
                                         <li title="Baths"><span><i
-                                                    class="fa-solid fa-shower"></i></span>{{ $lot['bathrooms'] ??  $lot['project']['min_bathrooms'] ?? 'N/A' }}
+                                                    class="fa-solid fa-shower"></i></span>{{ $project['bathrooms'] ?? $project['min_bathrooms'] ?? 'N/A' }}
                                         </li>
                                         <li title="Area"><span><i
-                                                    class="fa-solid fa-vector-square"></i></span>{{ $lot['living_area'] ?? $lot['project']['min_living_area'] ?? 'N/A' }}
+                                                    class="fa-solid fa-vector-square"></i></span>{{ $project['min_living_area'] ?? 'N/A' }}
                                         </li>
                                         <li title="Area"><span><i
-                                                    class="fa-solid fa-car"></i></span>{{ $lot['garage'] ?? $lot['project']['min_lot_garage'] ?? 'N/A' }}
+                                                    class="fa-solid fa-car"></i></span>{{ $project['garage'] ?? $project['min_lot_garage'] ?? 'N/A' }}
                                         </li>
                                     </ul>
                                 </div>
@@ -129,10 +129,10 @@ new class extends Component {
                                     <div class="agent">
                                         <a href="javascript:void(0);" class="d-flex text-general align-items-center"><img
                                                 class="rounded-circle me-2"
-                                                src="{{ $lot['agent_image'] ?? '/assets/images/avatar.png' }}"
-                                                alt="{{ $lot['agent_name'] ?? env('APP_NAME') }}"><span>{{ $lot['agent_name'] ?? env('APP_NAME') }}</span></a>
+                                                src="{{ $project['agent_image'] ?? '/assets/images/avatar.png' }}"
+                                                alt="{{ $project['agent_name'] ?? 'Anil Amaravathi' }}"><span>{{ $project['agent_name'] ?? 'Anil Amaravathi' }}</span></a>
                                     </div>
-                                    <div class="post-date ms-auto"><span>{{ $lot['updated_at'] ?? 'N/A' }}</span>
+                                    <div class="post-date ms-auto"><span>{{ $project['updated_at'] ?? 'N/A' }}</span>
                                     </div>
                                 </div>
                             </div>
