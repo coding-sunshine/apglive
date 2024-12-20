@@ -20,6 +20,10 @@ class ListingController extends Controller
     {
         $lots = $this->fusionCrmService->getLots($request->all());
 
-        return view('listing', compact( 'lots'));
+        // dd($lots);
+        
+        logger()->info('Lots data structure:', ['lots' => $lots]);
+        
+        return view('listing', compact('lots'));
     }
 }
