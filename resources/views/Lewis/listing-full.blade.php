@@ -339,7 +339,7 @@
                                     <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property-grid-2.png') }}" alt="Image Not Found!"></a>
                                 </div>
                                 <div class="item">
-                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-10.png') }}" alt="Image Not Found!"></a>
+                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-8.png') }}" alt="Image Not Found!"></a>
                                 </div>
                             </div>
                             <a href="#" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>Condos</span></a>
@@ -379,7 +379,7 @@
                                     <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property-grid-3.png') }}" alt="Image Not Found!"></a>
                                 </div>
                                 <div class="item">
-                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-10.png') }}" alt="Image Not Found!"></a>
+                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-8.png') }}" alt="Image Not Found!"></a>
                                 </div>
                             </div>
                             <a href="#" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>Villa</span></a>
@@ -419,7 +419,7 @@
                                     <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property-grid-4.png') }}" alt="Image Not Found!"></a>
                                 </div>
                                 <div class="item">
-                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-10.png') }}" alt="Image Not Found!"></a>
+                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-8.png') }}" alt="Image Not Found!"></a>
                                 </div>
                             </div>
                             <a href="#" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>Villa</span></a>
@@ -459,7 +459,7 @@
                                     <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property-grid-5.png') }}" alt="Image Not Found!"></a>
                                 </div>
                                 <div class="item">
-                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-10.png') }}" alt="Image Not Found!"></a>
+                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-8.png') }}" alt="Image Not Found!"></a>
                                 </div>
                             </div>
                             <a href="#" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>Villa</span></a>
@@ -499,7 +499,7 @@
                                     <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property-grid-6.png') }}" alt="Image Not Found!"></a>
                                 </div>
                                 <div class="item">
-                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-10.png') }}" alt="Image Not Found!"></a>
+                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-8.png') }}" alt="Image Not Found!"></a>
                                 </div>
                             </div>
                             <a href="#" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>Villa</span></a>
@@ -539,7 +539,7 @@
                                     <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property-grid-1.png') }}" alt="Image Not Found!"></a>
                                 </div>
                                 <div class="item">
-                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-10.png') }}" alt="Image Not Found!"></a>
+                                    <a href="{{ route('property.detail') }}"><img src="{{ theme_url('images/property_grid/property-grid-8.png') }}" alt="Image Not Found!"></a>
                                 </div>
                             </div>
                             <a href="#" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>Condos</span></a>
