@@ -1,30 +1,11 @@
 <!--============== Header Section Start ==============-->
 <header class="header-style nav-on-top bg-white">
-    <div class="xs-mx-none" style="background-color:var(--theme-footer-color) !important">
-        <div class="container">
-            <div class="row row-cols-md-2 row-cols-1">
-                <div class="col">
-                    <ul class="top-contact list-color-white">
-                        <li><a href="tel:{{ config('settings.contact.phone') }}"><i class="fa fa-phone" aria-hidden="true"></i> Need Support ? {{ config('settings.contact.phone') }}</a></li>
-                    </ul>
-                </div>
-                @if(config('settings.auth'))
-                    <div class="col">
-                        <ul class="nav-bar-top right list-color-white d-flex">
-                            <li><a href="#">Sign Up</a></li>
-                            <li><a href="#">Login</a></li>
-                        </ul>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
     <div class="main-nav">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <nav class="navbar navbar-expand-lg nav-secondary nav-primary-hover nav-line-active">
-                        <a class="navbar-brand" href="/"><img class="nav-logo" src="/assets/images/apg_logo_white_bg.png" alt="Image not found !"></a>
+                        <a class="navbar-brand" href="/"><img class="nav-logo" src="/assets/images/logo.png" alt="Lewis Properties"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon flaticon-menu flat-small text-primary"></span>
                         </button>
@@ -40,7 +21,7 @@
                                     <a class="nav-link" href="/about">About Us</a>
                                 </li>
                             </ul>
-                            <a href="/contact" class="btn btn-primary add-listing-btn">Contact</a>
+                            <a href="/contact" class="btn btn-primary add-listing-btn">Contact Us</a>
                         </div>
                     </nav>
                 </div>
