@@ -379,7 +379,7 @@
                 globalBGRepeat: 'repeat',
                 globalBGAttachment: 'fixed',
                 globalBGSize: 'contain',
-                skinsPath: '/assets/skins/'
+                skinsPath: 'assets/skins/'
             });
         });
     }
@@ -396,7 +396,7 @@
             showCircleTimer: 'false',
             skin: 'noskin',
             thumbnailNavigation: 'always',
-            skinsPath: '/assets/skins/'
+            skinsPath: 'assets/skins/'
         });
     }
 

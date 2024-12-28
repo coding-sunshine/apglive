@@ -51,69 +51,6 @@
 /*===============================================================================
 Default CSS Start
 ==================================================================================*/
-
-
-:root {
-    --theme-secondary-color: #000000 !important;
-}
-:root {
-    --theme-primary-color: #00ADEF !important;
-}
-.btn.btn-primary:hover{
-    color: #fff;
-    background-color: #000!important;
-    border-color: #000 !important;
-}
-
-.nav-secondary-hover.nav-line-active .navbar-nav .active>.nav-link:before, .nav-secondary-hover.nav-line-active .navbar-nav .active>.nav-link:before, .down-line-secondary:before, .owl-carousel button.owl-dot.active, .bg-secondary {
-    background-color: #000000 !important;
-}
-.bg-light {
-    background-color: #f3fbfe !important;
-}
-:root {
-    --theme-hiperlink-font: "Montserrat", serif !important;
-}
-.home-banner p.text-white.ls-layer{
-	height: auto !important;
-}
-.footer .row .col.row-cols-4:first-child{
-	padding-right: 100px;
-}
-#scroll {
-    position: fixed;
-    right: 10px;
-    bottom: 50px;
-    line-height: 30px;
-    text-align: center;
-    z-index: 100;
-    display: none;
-    cursor: pointer;
-    background-color: #00adef;
-    padding: 0 12px;
-    color: #fff;
-}
-.cta-section .btn:hover{
-	background-color: #000;
-	color: #fff;
-}
-.ls-circle-timer{
-	display: none !important;
-}
-@font-face {
-    font-family: 'Avian';
-    src: url('fonts/Avian-Bold.eot');
-    src: url('fonts/Avian-Bold.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Avian-Bold.woff2') format('woff2'),
-        url('fonts/Avian-Bold.woff') format('woff'),
-        url('fonts/Avian-Bold.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-
 a,
 .photo-overlay::before,
 [class*="accordion-plus-"] .ac-toggle::after {
@@ -125,7 +62,7 @@ a,
 }
 body {
 	font-size: 15px;
-	font-family: "Montserrat", serif;
+	font-family: var(--theme-general-font);
 	font-weight: 400;
 	line-height: 28px;
 }
@@ -151,7 +88,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-	font-family: 'Avian';
+	font-family: var(--theme-highlight-font);
 	line-height: revert;
 	font-weight: 700;
 }
@@ -240,7 +177,7 @@ textarea.form-control {
 	color: var(--theme-general-color)
 }
 .btn-link:hover {
-	color: var(--theme-primary-color)
+	color: #0fabdf
 }
 .text-center .btn-link {
 	margin: 0 auto;
@@ -342,7 +279,7 @@ table th {
 .vertical-timeline::after {
 	left: 95px;
 	height: 82%;
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 }
 .decimal-list li {
 	list-style-type: decimal;
@@ -364,7 +301,7 @@ table th {
 	content: "";
 	width: 20px;
 	height: 1px;
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	left: 0;
 	top: 12px;
 }
@@ -404,7 +341,7 @@ table th {
 }
 .tagline-3 {
 	background-color: var(--theme-primary-opacity-color);
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 	padding: 0 20px;
 	line-height: 30px;
 	display: table;
@@ -418,7 +355,7 @@ table th {
 	top: 15px;
 	width: 80px;
 	height: 2px;
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 }
 .form-switch .form-check-input {
 	background-repeat: no-repeat;
@@ -466,7 +403,7 @@ table th {
 	background-color: var(--theme-dark-color) !important;
 }
 .hover-primary:hover {
-	background-color: var(--theme-primary-color) !important;
+	background-color: #0fabdf !important;
 }
 .hover-secondary:hover {
 	background-color: var(--theme-secondary-color) !important;
@@ -483,7 +420,7 @@ Button Style
 ===============================================================================*/
 /*----------*/
 .btn.btn-primary {
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	color: var(--theme-white-color);
 }
 /*----------*/
@@ -505,7 +442,7 @@ Nav Pils Tab Style Start
 }
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 	background-color: transparent;
 }
 .nav-pills .nav-link {
@@ -534,7 +471,7 @@ Nav Pils Tab Style Start
 }
 .tab-style-1 .nav-pills .nav-link.active::before,
 .tab-style-1 .nav-pills .show>.nav-link::before {
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 }
 /*===============================================================================
 Form Design Style Start
@@ -543,7 +480,7 @@ select {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background-image: url(../images/icon/angle-down-solid.png);
+	background-image: url(../images/angle-down-solid.png);
 	background-repeat: no-repeat;
 	background-size: 8px;
 	background-position: calc(100% - 20px);
@@ -571,7 +508,7 @@ select:focus {
 .search-form .form-control {
 	height: 50px;
 	padding: 5px 30px 5px 20px;
-	background: var(--theme-light-color);
+	background: #f0fbff;
 	font-size: 1rem;
 	color: #495057;
 }
@@ -614,7 +551,7 @@ select:focus {
 .dropdown-item.active,
 .dropdown-item:active {
 	background-color: var(--theme-light-color);
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .bootstrap-select .dropdown-menu li {
 	position: relative;
@@ -729,7 +666,7 @@ select:focus {
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	border: none;
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	color: var(--theme-white-color);
 }
 .price-toggle {
@@ -770,7 +707,9 @@ select:focus {
 Header Style Start
 ==================================================================================*/
 .nav-logo {
-    width: 150px
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 .dropdown-item,
 .navbar-nav .nav-link {
@@ -814,8 +753,8 @@ Slide Filter Style Start
 	overflow: hidden;
 }
 .select-custom li input[type="radio"]:checked+label {
-	border-color: var(--theme-primary-color);
-	color: var(--theme-primary-color);
+	border-color: #0fabdf;
+	color: #0fabdf;
 }
 .select-custom li input[type="radio"]:checked+label:before {
 	position: absolute;
@@ -824,7 +763,7 @@ Slide Filter Style Start
 	height: 1px;
 	border: 12px;
 	border-style: solid;
-	border-color: var(--theme-primary-color) transparent transparent transparent;
+	border-color: #0fabdf transparent transparent transparent;
 	transform: rotate(-45deg);
 	right: -12px;
 	bottom: -12px;
@@ -850,7 +789,7 @@ jSlider Style Start
 ==================================================================================*/
     
 .jslider .jslider-pointer {
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	border: 4px solid #fff;
  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .20)!important;
 }
@@ -913,7 +852,7 @@ jSlider Style Start
 	left: 20%;
 	top: 0;
 	height: 4px;
-	background: var(--theme-primary-color);
+	background: #0fabdf;
 }
 .jslider .jslider-pointer {
 	width: 18px;
@@ -1068,7 +1007,7 @@ Pagination Style Start
 	width: auto
 }
 .pagination-dotted-active .active .page-link {
-	background: var(--theme-primary-color);
+	background: #0fabdf;
 	border: none;
 	color: var(--theme-white-color)
 }
@@ -1111,7 +1050,7 @@ Custom Scroll Bar Style Start
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-primary-color);
+    background: #0fabdf;
 }
 /*===============================================================================
 About Us Style Start
@@ -1133,7 +1072,7 @@ About Us Style Start
 	padding: 20px;
 	margin: 25px 0;
 	border-left: 4px solid;
-	border-color: var(--theme-primary-color);
+	border-color: #0fabdf;
 	font-size: 16px;
 }
 .icon-text-1 {
@@ -1146,7 +1085,7 @@ About Us Style Start
 	display: table;
 	background-color: var(--theme-primary-opacity-color);
 	text-align: center;
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 	border-radius: 50%;
 	margin-right: 15px;
 	line-height: 37px;
@@ -1228,7 +1167,7 @@ Apartment Sketch Style Start
 }
 .apartments-info-list>ul li span,
  .apartments-info-list>ul li label {
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	z-index: 9;
 }
 .apartments-info-list>ul li label {
@@ -1297,7 +1236,7 @@ Service Area Style Start
 	bottom: -10px;
 	left: 0;
 	border-style: solid;
-	border-color: transparent transparent transparent var(--theme-primary-color);
+	border-color: transparent transparent transparent #0fabdf;
 }
 .service-style-1,
  .hover-style-1 {
@@ -1310,7 +1249,7 @@ Service Area Style Start
 	bottom: 0;
 	width: 0%;
 	height: 4px;
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	-webkit-transition: all 0.5s ease 0s;
 	-o-transition: all 0.5s ease 0s;
 	transition: all 0.5s ease 0s;
@@ -1362,7 +1301,7 @@ Service Area Style Start
 	justify-content: center;
 }
 .service-style-1:hover .btn-icon {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 /*===============================================================================
 Agent Block Style Start
@@ -1380,7 +1319,7 @@ Agent Block Style Start
 	position: absolute;
 	content: "";
 	border: 5px solid;
-	border-color: transparent var(--theme-primary-color) transparent transparent;
+	border-color: transparent #0fabdf transparent transparent;
 	left: -10px;
 	top: 50%;
 	transform: translateY(-50%);
@@ -1405,7 +1344,7 @@ Agent Block Style Start
     left: -42px;
     width: 110px;
     text-align: center;
-    background-color: var(--theme-primary-color);
+    background-color: #0fabdf;
     letter-spacing: 2px;
     font-size: 13px;
     color: var(--theme-white-color)
@@ -1471,8 +1410,8 @@ Agent Block Style Start
     color: var(--text-light-color)
 }
 .agent-style-1 .social-media a:hover {
-    background-color: var(--theme-primary-color);
-    border-color: var(--theme-primary-color);
+    background-color: #0fabdf;
+    border-color: #0fabdf;
     color: var(--theme-white-color);
 }
 .agent-style-1.list-view .entry-wrapper {
@@ -1602,13 +1541,13 @@ Property Block Style Start
 }
 .property-grid-1 .listing-ctg i {
 	margin-right: 3px;
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .property-grid-1 .listing-price,
 .property-grid-2 .listing-price,
 .property-grid-4 .listing-price {
     font-weight: 700;
-    color: var(--theme-primary-color);
+    color: #0fabdf !important;
     display: flex;
     font-family: var(--theme-highlight-font);
     font-size: 21px;
@@ -1632,7 +1571,7 @@ Property Block Style Start
 .property-grid-6 .listing-location i,
 .property-grid-7 .listing-location i {
 	font-size: 13px;
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .property-grid-1 .listing-title,
 .property-grid-1 .listing-title a {
@@ -1643,7 +1582,7 @@ Property Block Style Start
 }
 .property-grid-1 .listing-title:hover,
 .property-grid-1 .listing-title a:hover {
-    color: var(--theme-primary-color);
+    color: #0fabdf;
 }
 .property-grid-2 .listing-title,
 .property-grid-2 .listing-title a {
@@ -1654,7 +1593,7 @@ Property Block Style Start
 }
 .property-grid-2 .listing-title:hover,
 .property-grid-2 .listing-title a:hover {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .property-grid-2 ul.quantity {
 	margin-bottom: 15px;
@@ -1727,11 +1666,11 @@ Property Block Style Start
 }
 .property-grid-3 .listing-title:hover,
 .property-grid-3 .listing-title a:hover {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .property-grid-7 .listing-price {
 	font-weight: 700;
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 	font-family: var(--theme-highlight-font);
 	font-size: 21px;
 }
@@ -1742,7 +1681,7 @@ Property Block Style Start
 }
 .property-grid-7 .listing-title:hover,
 .property-grid-7 .listing-title a:hover {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .property-grid-7 .listing-location {
 	color: var(--theme-white-color);
@@ -1805,7 +1744,7 @@ Property Block Style Start
 }
 .property-grid-9 .listing-location i {
 	font-size: 13px;
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .property-grid-9 .entry-footer a {
     font-size: 13px;
@@ -1816,7 +1755,6 @@ Property Block Style Start
 .property-block {
 	position: relative;
 	overflow: hidden;
-	height: 100%;
 }
 .property-block .post-meta {
 	width: 100%
@@ -1915,7 +1853,7 @@ Property Block Style Start
 .property-grid-4 .btn-link {
     font-size: 13px;
     text-decoration: none;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: inline
 }
 .property-grid-4 .view-fiender {
@@ -1934,7 +1872,7 @@ Property Block Style Start
     text-align: center;
 }
 .property-grid-4 .view-fiender li a {
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: block;
 }
 .property-grid-4 .agent img {
@@ -1947,7 +1885,7 @@ Property Block Style Start
 }
 .property-grid-4 .quick-meta li a:hover {
 	color: var(--theme-white-color);
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 }
 .property-grid-5 .post-meta ul {
 	display: flex;
@@ -1970,7 +1908,7 @@ Property Block Style Start
     font-size: 18px;
     font-weight: 700;
     background-color: var(--theme-light-color);
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: inline-flex;
     border-radius: 20px;
     font-family: var(--theme-highlight-font);
@@ -1990,7 +1928,7 @@ Property Block Style Start
     line-height: 25px;
     padding: 0 10px;
     z-index: 100;
-    background-color: var(--theme-primary-color);
+    background-color: #0fabdf;
 }
 .property-grid-5 .listing-title {
     margin-bottom: 0
@@ -2049,7 +1987,7 @@ Property Block Style Start
 	padding: 3px 15px;
     font-size: 18px;
     font-weight: 700;
-    background-color: var(--theme-primary-color);
+    background-color: #0fabdf;
     color: var(--theme-secondary-color);
     display: inline-flex;
     border-radius: 20px;
@@ -2096,13 +2034,13 @@ Property Block Style Start
 .property-list-1 .listing-title a:hover,
 .property-list-2 .listing-title:hover, 
 .property-list-2 .listing-title a:hover{
-    color: var(--theme-primary-color);
+    color: #0fabdf;
 }
 .property-list-1 .listing-price {
     padding: 6px 0;
     font-size: 21px;
     font-weight: 700;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: inline-flex;
     border-radius: 3px;
     font-family: var(--theme-highlight-font);
@@ -2123,7 +2061,7 @@ Property Block Style Start
 .property-list-1 .listing-location i,
 .property-list-2 .listing-location i {
     font-size: 13px;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
 }
 .property-list-1 ul.quantity,
 .property-list-2 ul.quantity {
@@ -2138,7 +2076,7 @@ Property Block Style Start
 .property-list-2 .listing-price {
     font-size: 21px;
     font-weight: 700;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: inline-flex;
     border-radius: 3px;
     margin-bottom: 5px;
@@ -2152,7 +2090,7 @@ Property Block Style Start
 .property-list-2 .btn-link {
     font-size: 13px;
     text-decoration: none;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: inline;
 }
 .product-offer-item {
@@ -2163,7 +2101,7 @@ Property Block Style Start
 	color: var(--theme-dark-color);
 }
 div.summary .product-offer-item:before {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 	font-size: 20px;
 	margin-right: 10px;
 	line-height: 1;
@@ -2244,7 +2182,7 @@ Sidebar Widgets Style Start
 }
 .widget_recent_property .listing-price {
 	font-weight: 700;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: inline-block;
     font-family: var(--theme-highlight-font);
     font-size: 18px;
@@ -2309,7 +2247,7 @@ Sidebar Widgets Style Start
 	color: var(--theme-general-color);
 }
 .widget_sidebarnav ul li a:hover {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .widget_recent_entries ul li a {
 	font-weight: 400;
@@ -2326,7 +2264,7 @@ Mixitup Style Start
 ==================================================================================*/
     
 .mixitup-control-active {
-	color: var(--theme-primary-color)
+	color: #0fabdf;
 }
 /*===============================================================================
 Accordion Style Start
@@ -2437,7 +2375,7 @@ Owl Carousel Style Start
     margin-left: 5px;
 }
 .owl-carousel.nav-top-right .owl-nav button:hover {
-	background-color: var(--theme-primary-color);
+	background-color: #0fabdf;
 	color: var(--theme-dark-color);
 }
 .owl-carousel button.owl-dot.active {
@@ -2646,7 +2584,7 @@ Single Property Page Style Start
 	background-color: transparent;
 }
 .view-category button.current {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .woocommerce-ordering-pages {
 	line-height: 40px;
@@ -2661,7 +2599,7 @@ Single Property Page Style Start
 	margin-right: 10px
 }
 .woocommerce-ordering select {
-	background-color: var(--theme-light-color);
+	background-color: #f0fbff;
     font-size: 14px;
     border: 0;
     padding-right: 45px;
@@ -2674,7 +2612,7 @@ Single Property Page Style Start
     font-size: 24px;
     font-weight: 700;
     text-align: right;
-    color: var(--theme-primary-color);
+    color: #0fabdf;
     display: flex;
     flex-direction: column;
     font-family: var(--theme-highlight-font);
@@ -2761,7 +2699,7 @@ Deshboard Style Start
 }
 .dashboard-nav .navbar-nav>.nav-item>.nav-link:hover {
 	border-left: 3px solid;
-	border-color: var(--theme-primary-color);
+	border-color: #0fabdf;
 	background: var(--theme-extra-color);
 }
 .dashboard-nav .navbar-nav .nav-item.active>.nav-link {
@@ -2769,12 +2707,12 @@ Deshboard Style Start
 }
 .dashboard-nav .navbar-nav>.nav-item.active>.nav-link {
 	border-left: 3px solid;
-	border-color: var(--theme-primary-color);
+	border-color: #0fabdf;
 	background: var(--theme-extra-color);
 }
 .dashboard-nav .db-dropdown-menu>li>.nav-link {
 	border-left: 3px solid;
-	border-color: var(--theme-primary-color);
+	border-color: #0fabdf;
 	background: var(--theme-extra-color);
 }
 .dashboard-nav .db-dropdown-menu {
@@ -2868,7 +2806,7 @@ Deshboard Style Start
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background: var(--theme-primary-color);
+    background: #0fabdf;
     text-align: center;
     line-height: 19px;
     margin-left: auto;
@@ -2946,7 +2884,7 @@ Deshboard Style Start
 	color: #fff;
 	cursor: pointer;
 	display: block;
-	background: var(--theme-primary-color);
+	background: #0fabdf;
 	padding: 5px 8px;
 	font-size: 11px;
 	border-radius: 3px;
@@ -3053,7 +2991,7 @@ Footer Style Start
 	color: var(--theme-white-color);
 }
 .media-footer-dark .footer-widget a:hover {
-	color: var(--theme-primary-color);
+	color: #0fabdf;
 }
 .copyright-border .container {
 	border-top: 1px solid #eeeeee;
@@ -3277,81 +3215,219 @@ Responsive Style Start
         display: none
     }
 }
-@media screen and (max-width: 767px) {
-	footer .row{
-		flex-direction: column;
-	}
+
+.banner-search{
+	position: relative;
+	z-index: 1;
 }
-.our-process .post-content{
-	min-height: 285px;
+footer .col.row-cols-4:first-child {
+    padding-right: 100px;
+	width: 40%;
+}
+footer .col.row-cols-4{
+	width: 30%;
+}
+
+.city-row .row .thumbnail-img img{
+	height: 240px;
+    object-fit: cover;
+}
+#scroll{
+	display: none !important;
+	visibility: hidden !important;
+}
+.flat-mini::before {
+    font-size: 15px;
+    line-height: 50px;
+    padding: 10px !important;
+}
+.nav-on-top{
+	padding: 10px 0;
+}
+#page_wrapper {
+    overflow: visible;
+}
+header.fixed-top {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
 }
 .view-category{
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
-.view-category a {
-    width: 40px;
-    height: 40px;
-    border: 0;
-    color: var(--theme-general-color);
-    background-color: transparent;
-    text-align: center;
-    padding: 4px;
-	display: inline-block;
+.view-category .flat-mini::before {
+    font-size: 15px;
+    line-height: 35px;
+    padding: 10px !important;
 }
-.commiment-section .col:first-child{
-	padding-right: 50px;
+#single-property{
+	margin: 0 !important;
 }
-.row.property-listing{
-	row-gap: 25px;
+#single-property .ls-slide-backgrounds img{
+	position: relative;
+	z-index: 2;
 }
-.listing-heading, .single-head{
-	margin-top: 75px;
+#single-property .ls-slide-backgrounds img::after{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background-color: rgba(0, 0, 0, 0.1);
+	z-index: 1;
 }
-@media screen and (max-width: 1080px) {
-	.about-section .row .col-lg-12 .text-secondary{
-		max-width: 100%;
-	}
-	.contact-widget ul li br {
-		display: none;
-	}
-	.commiment-section h2{
-		font-size: 32px;
-    	line-height: 42px;
+.single-property-slider{
+	position: relative;
+    z-index: 3;
+}
+.single-property-slider::before {
+    background: rgba(0,0,0,0.5);
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.single-property-slider .container-fluid {
+	position: relative;
+    z-index: -1;
+}
+.property-detail .listing-price{
+	color: #fff;
+}
+.quick-meta .flat-mini::before {
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 !important;
+}
+.fixed-top .nav-logo {
+    width: 60px;
+    height: 60px;
+}
+.about-section{
+	padding: 100px 0;
+}
+.about-section .col:first-child{
+	position: sticky; 
+	top: 100px;
+}
+.about-section .row{
+	align-items: flex-start;
+}
+@media screen and (max-width: 1200px) {
+	.city-row .row .thumbnail-img img {
+		height: 165px;
+		object-fit: cover;
 	}
 }
 @media screen and (max-width: 991px) {
-.page-banner-simple {
-	margin-top: 0 !important;
-}
-.listing-heading{
-	margin-top: 0;
-}
-}
-@media screen and (max-width: 768px) {
-.commiment-section h2{
-    font-size: 28px;
-    line-height: 36px;
-}
-.about-section.full-width-text p{
-	font-size: 18px !important;
-}
-.single-head{
-	margin-top: 0;
-}
 
-.container, .container-md, .container-sm {
-        max-width: 90%;
-    }
-	.commiment-section .col:first-child{
-		padding-right: 0;
-		margin-bottom: 30px;
+.city-row .row .thumbnail-img img {
+    height: 120px;
+    object-fit: cover;
+}
+footer .col.row-cols-4:first-child{
+	padding-right: 30px;
+}
+}
+@media screen and (max-width: 767px) {
+	img.nav-logo {
+		width: 60px;
+		height: 60px;
 	}
-
+	.navbar {
+		padding: 10px 0;
+	}
+	.banner-search span.d-table.mx-auto.text-white.font-medium.mb-4{
+		text-align: center;
+	}
+	.banner-search {
+		padding: 80px 0 !important;
+	}
+	.city-row .row .thumbnail-img img {
+		height: 230px;
+	}
+	.feature-property h2.main-title{
+		text-align: center;
+	}
+	.feature-property .mix-tab{
+		text-align: center;
+	}
+	.feature-property .mix-tab ul.nav-tab-border-active{
+		width: auto;
+		float: none;
+		margin-left: 0 !important;
+		display: inline-block !important; 
+	}
+	.feature-property ul.nav-tab-border-active li {
+		min-width: 65px;
+		padding: 8px;
+	}
+	footer .col.row-cols-4:first-child {
+		padding-right: 15px;
+		width: 100%;
+	}
+	footer .col.row-cols-4 {
+		width: 100%;
+	}
+	footer.full-row.footer-default-dark.bg-footer {
+		padding-bottom: 0 !important;
+	}
+	.about-section .col:first-child{
+		position: relative; 
+		top: 0;
+	}
+	.about-section .row{
+		align-items: flex-start;
+	}
+	.about-section .col:nth-child(1) .simple-thumb{
+		padding: 0;
+	}
+	.page-banner-simple{
+		margin-top: 0 !important;
+	}
+	.about-section {
+		padding: 50px 0;
+	}
+	.about-section .row .col:nth-child(2) .simple-thumb{
+		padding: 0 !important;
+	}
+	.about-section1 .col:first-child{
+		margin-bottom: 30px !important;
+	}
+	.full-row.bg-white.about-section1 {
+		padding: 50px 0;
+	}
+	.full-row h2.text-dark.mb-4.down-line {
+		font-size: 28px;
+	}
+	.commiment-section.bg-light {
+		padding: 50px 0;
+	}
+	.contact-form{
+		padding-top: 0;
+	}
+	.contact-form .col-md-7.order-md-2.p-5.bg-light{
+		padding: 30px !important;
+		margin-bottom: 50px !important;
+	}
+	.contcat-detail{
+		padding: 0 30px !important;
+	}
+	.full-row.contact-form{
+		padding-bottom: 50px;
+	}
+	.property-detail{
+		margin-top: 0 !important;
+	}
+	
 }
-@media (max-width: 576px) {
-.container, .container-sm {
-    max-width: 90%;
-	padding: 0 !important;
-}
+@media screen and (max-width: 575px) {
+	.city-row .thumbnail-img.rounded-circle{
+		width: 200px;
+        height: 200px;
+		margin: 0 auto;
+	}
 }
