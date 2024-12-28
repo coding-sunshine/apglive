@@ -9,7 +9,7 @@
         <div id="page_wrapper" class=" @yield('page-wrapper-class', 'bg-ligh')">
             @include('layout.partials.header')
 
-            @yield('main-content')
+            {{ $slot }}
 
             @include('layout.partials.footer')
             @include('component.quick-view-modal')

@@ -1,9 +1,10 @@
-@extends('layout.app')
+<?php
 
-@section('title') Invest @endsection
+use function Laravel\Folio\name;
+name('contact');
 
-@section('main-content')
-
+?>
+<x-frontend-layout>
         <!--============== Page Banner Start ==============-->
         <div class="page-banner-simple py-50" style="background-image: url({{ theme_url('images/banner3.png') }}); background-repeat: no-repeat; background-position: center center; background-size: cover; margin-top: 75px;">
             <div class="container">
@@ -152,4 +153,4 @@
                 </div>
             </div>
         </div>
-@endsection
+</x-frontend-layout>
