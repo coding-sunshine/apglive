@@ -20,3 +20,11 @@ if (config('settings.auth')) {
 Route::get('/', HomeController::class);
 Route::get('/listings', ListingController::class);
 Route::get('/property/{propertyId}', ListingDetailController::class);
+
+Route::get('home', [HomeController::class, 'getHome'])->name('home');
+Route::get('about', [HomeController::class, 'getAbout'])->name('about');
+Route::get('listing', [HomeController::class, 'getListing'])->name('listing');
+Route::get('listing-full', [HomeController::class, 'getListingFull'])->name('listing.full');
+Route::get('contact', [HomeController::class, 'getContact'])->name('contact');
+Route::get('terms', [HomeController::class, 'getTerms'])->name('terms');
+Route::get('property-detail', [HomeController::class, 'getPropertyDetail'])->name('property.detail');
