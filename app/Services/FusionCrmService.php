@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Http;
 
 class FusionCrmService
 {
-    // Project types mapping
-    protected $projectTypes = [
+    protected const CACHE_DURATION = [7200, 7500];
+
+    protected const PROJECT_TYPES = [
         'houseAndLand' => 1,
         'apartment' => 2,
         'townHouseUnit' => 3,
@@ -43,26 +44,29 @@ class FusionCrmService
         $this->subscriberId = config('services.fusion.subscriber_id');
     }
 
-    public function fetchProjects($params = [])
+    protected function makeRequest(string $endpoint, array $params = []): array
     {
-        $getParams = array_merge($params, [
-            'subscriber' => $this->subscriberId
-        ]);
+        $params = array_merge($params, ['subscriber' => $this->subscriberId]);
+        
         return Http::retry(3, 100)
             ->withHeaders($this->headers)
-            ->get($this->apiBaseUrl . $this->apiProjectsUrl, $getParams)
+            ->get($this->apiBaseUrl . $endpoint, $params)
             ->json();
+    }
+
+    public function fetchProjects($params = [])
+    {
+        return $this->makeRequest($this->apiProjectsUrl, $params);
     }
 
     public function fetchLots($params = [])
     {
-        $getParams = array_merge($params, [
-            'subscriber' => $this->subscriberId
-        ]);
-        return Http::retry(3, 100)
-            ->withHeaders($this->headers)
-            ->get($this->apiBaseUrl . $this->apiLotsUrl, $getParams)
-            ->json();
+        return $this->makeRequest($this->apiLotsUrl, $params);
+    }
+
+    protected function cacheResponse(string $key, callable $callback): array
+    {
+        return Cache::flexible($key, self::CACHE_DURATION, $callback);
     }
 
     public function getCachedProjects($cacheKey, $params, $cacheDuration = [7200, 7500], $getprojecttype = null)
@@ -87,7 +91,7 @@ class FusionCrmService
 
     public function getProjectTypeId($type)
     {
-        return $this->projectTypes[$type] ?? null;
+        return self::PROJECT_TYPES[$type] ?? null;
     }
 
     public function getProjectsByType($type, $additionalParams = [], $cacheDuration = [7200, 7500], $limit = 12)
@@ -99,8 +103,6 @@ class FusionCrmService
 
         $params = array_merge(['projecttype_id' => $projectTypeId, 'limit' => $limit], $additionalParams);
         $cacheKey = $type . 'Projects';
-
-        dump($params);
 
         return $this->getCachedProjects($cacheKey, $params, $cacheDuration);
     }
@@ -120,27 +122,27 @@ class FusionCrmService
 
     public function getProjects($params = [], $cacheKey, $cacheDuration = [7200, 7500])
     {
-        // check if $cacheKey is in the $projectTypes  array, if yes then call getProjectsByType method
+        // check if $cacheKey is in the PROJECT_TYPES array
         $getprojecttype = null;
-        if (array_key_exists($cacheKey, $this->projectTypes)) {
-            $getprojecttype =  ['title'=> $cacheKey];
+        if (array_key_exists($cacheKey, self::PROJECT_TYPES)) {
+            $getprojecttype = ['title' => $cacheKey];
         }
 
-        $cacheKey = $cacheKey. '_' . md5(json_encode($params));
+        $cacheKey = $cacheKey . '_' . md5(json_encode($params));
 
-        return $this->getCachedProjects($cacheKey, $params, $cacheDuration, $getprojecttype );
+        return $this->getCachedProjects($cacheKey, $params, $cacheDuration, $getprojecttype);
     }
 
-    public function getLots($params = [], $cacheKey = 'lotsSearch'  ,$cacheDuration = [7200, 7500])
+    public function getLots($params = [], $cacheKey = 'lotsSearch', $cacheDuration = [7200, 7500])
     {
-        // check if $cacheKey is in the $projectTypes  array, if yes then call getProjectsByType method
+        // check if $cacheKey is in the PROJECT_TYPES array
         $getprojecttype = null;
-        if (array_key_exists($cacheKey, $this->projectTypes)) {
-            $getprojecttype =  ['title'=> $cacheKey];
+        if (array_key_exists($cacheKey, self::PROJECT_TYPES)) {
+            $getprojecttype = ['title' => $cacheKey];
         }
 
         // Generate a unique cache key based on the parameters
-        $cacheKey = $cacheKey. '_' . md5(json_encode($params));
+        $cacheKey = $cacheKey . '_' . md5(json_encode($params));
 
         return $this->getCachedLots($cacheKey, $params, $cacheDuration, $getprojecttype);
     }
