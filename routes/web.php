@@ -18,7 +18,6 @@ if (config('settings.auth')) {
     require __DIR__ . '/auth.php';
 }
 
-Route::get('/', HomeController::class)->name('home');
-Route::get('/listings', ListingController::class)->name('listings');
-Route::get('/property/{propertyId}', ListingDetailController::class)->name('property');
-Route::get('/project/{projectId}', ProjectDetailController::class)->name('project');
+Route::get('/', HomeController::class);
+Route::get('/listings', ListingController::class);
+Route::get('/property/{propertyId}', ListingDetailController::class);
