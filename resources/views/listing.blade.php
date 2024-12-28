@@ -1,8 +1,4 @@
 <x-frontend-layout>
-    @php
-        dump($lots);  // Temporary debug line
-    @endphp
-    
     <!-- Page Title -->
     <div class="full-row py-5 listing-heading">
         <div class="container">
