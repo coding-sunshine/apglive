@@ -106,23 +106,37 @@
             <!-- Pagination -->
             <div class="row">
                 <div class="col mt-5">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination pagination-dotted-active justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link">Previous Page</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void:(0);">...</a></li>
-                            <li class="page-item"><a class="page-link" href="#">586</a></li>
-                            <li class="page-item"><a class="page-link" href="#">587</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next Page</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    @if(isset($pagination))
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-dotted-active justify-content-center">
+                                <!-- Previous Page -->
+                                <li class="page-item {{ $pagination['prev'] ? '' : 'disabled' }}">
+                                    <a class="page-link" href="{{ $pagination['prev'] ?? '#' }}">Previous Page</a>
+                                </li>
+
+                                <!-- Dynamic Pages -->
+                                @foreach($pagination['pages'] as $pageNumber => $pageUrl)
+                                    @if($pageUrl === '...')
+                                        <li class="page-item disabled">
+                                            <span class="page-link">...</span>
+                                        </li>
+                                    @else
+                                        <li class="page-item {{ request('page', 1) == $pageNumber ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $pageUrl }}">{{ $pageNumber }}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+
+                                <!-- Next Page -->
+                                <li class="page-item {{ $pagination['next'] ? '' : 'disabled' }}">
+                                    <a class="page-link" href="{{ $pagination['next'] ?? '#' }}">Next Page</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    @endif
                 </div>
             </div>
+
         </div>
     </div>
 </x-frontend-layout>
