@@ -31,20 +31,16 @@
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="sorting-options">
-                                <select class="form-select">
-                                    <option>Default Sorting</option>
-                                    <option>Price Low to High</option>
-                                    <option>Price High to Low</option>
-                                    <option>Latest Properties</option>
+                                <select class="form-select" name="sort_by" onchange="window.location.href = this.value">
+                                    <option value="{{ request()->fullUrlWithQuery(['sort_by' => '']) }}" 
+                                            {{ !request('sort_by') ? 'selected' : '' }}>Default Sorting</option>
+                                    <option value="{{ request()->fullUrlWithQuery(['sort_by' => 'price_asc']) }}" 
+                                            {{ request('sort_by') == 'price_asc' ? 'selected' : '' }}>Price Low to High</option>
+                                    <option value="{{ request()->fullUrlWithQuery(['sort_by' => 'price_desc']) }}" 
+                                            {{ request('sort_by') == 'price_desc' ? 'selected' : '' }}>Price High to Low</option>
+                                    <option value="{{ request()->fullUrlWithQuery(['sort_by' => 'latest']) }}" 
+                                            {{ request('sort_by') == 'latest' ? 'selected' : '' }}>Latest Properties</option>
                                 </select>
-                            </div>
-                            <div class="layout-view ms-4">
-                                <a href="javascript:void(0);" class="active">
-                                    <i class="fas fa-th-large"></i>
-                                </a>
-                                <a href="javascript:void(0);">
-                                    <i class="fas fa-th-list"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
