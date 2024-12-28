@@ -54,6 +54,14 @@ class HomeController extends Controller
         return view('terms');
     }
 
+    public function getInvest(){
+        return view('invest');
+    }
+
+    public function getPrivacyPolicy(){
+        return view('privacy-policy');
+    }
+
     public function getPropertyDetail(){
         return view('property-detail');
     }
