@@ -313,5 +313,5 @@
         </div>
     </div>
     <!--============== Property Grid View End ==============-->
-
+    @include('component.quick-view-modal')
 @endsection

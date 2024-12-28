@@ -281,8 +281,8 @@
                         <div class="d-flex">
                             <span class="woocommerce-ordering-pages me-4 font-fifteen">Showing at 15 result</span>
                             <form class="view-category" method="get">
-                                <a href="listing.html"><i class="flaticon-grid-1 flat-mini"></i></a>
-                                <a href="listing-full.html"><i class="flaticon-grid flat-mini"></i></a>
+                                <a href="{{ route('listing') }}"><i class="flaticon-grid-1 flat-mini"></i></a>
+                                <a href="{{ route('listing.full') }}"><i class="flaticon-grid flat-mini"></i></a>
                             </form>
                         </div>
                     </div>
@@ -692,5 +692,5 @@
         </div>
     </div>
     <!--============== Property Grid View End ==============-->
-
+    @include('component.quick-view-modal')
 @endsection
