@@ -4,7 +4,10 @@
 
     @include('layouts.partials.sliders')
 
-    @include('layouts.partials.home-about')
+    @include('layouts.partials.home-cities')
 
-    @include('layouts.partials.why')
+    @include('layouts.partials.home-featured')
+
+    @include('layouts.partials.home-footer-banner')
+
 </x-frontend-layout>

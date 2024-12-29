@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col">
                     <nav class="navbar navbar-expand-lg nav-white nav-primary-hover nav-line-active">
-                        <a class="navbar-brand" href="/"><img class="nav-logo" src="/assets/images/foterlogo.png"
+                        <a class="navbar-brand" href="/"><img class="nav-logo" src="/assets/images/lplogo.png"
                                                               alt="Lewis Properties"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

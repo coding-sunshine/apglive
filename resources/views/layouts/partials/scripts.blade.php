@@ -1,8 +1,5 @@
 <!-- Javascript Files -->
 <script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/greensock.js"></script>
-<script src="/assets/js/layerslider.transitions.js"></script>
-<script src="/assets/js/layerslider.kreaturamedia.jquery.js"></script>
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/bootstrap-select.min.js"></script>
@@ -16,27 +13,5 @@
 <script src="/assets/js/mixitup.min.js"></script>
 <script src="/assets/js/paraxify.js"></script>
 <script src="/assets/js/custom.js"></script>
-<script>
-    $('#slider').layerSlider({
-        sliderVersion: '6.0.0',
-        type: 'fullwidth',
-        responsiveUnder: 0,
-        maxRatio: 1,
-        slideBGSize: 'auto',
-        hideUnder: 0,
-        hideOver: 100000,
-        skin: 'outline',
-        fitScreenWidth: true,
-        fullSizeMode: 'fitheight',
-        navButtons: false,
-        navStartStop: false,
-        height:840,
-        skinsPath: '/assets/skins/'
-    });
-</script>
-
-<!-- Add these before your other scripts -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 @stack('scripts')

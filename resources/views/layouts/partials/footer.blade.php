@@ -1,13 +1,15 @@
 <!--============== Footer Section Start ==============-->
-<footer class="full-row footer-default-dark bg-footer footer" style="padding-bottom: 30px">
+<footer class="full-row footer-default-dark bg-footer" style="padding-bottom: 30px">
     <div class="container">
-        <div class="row">
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
             <div class="col row-cols-4">
                 <div class="footer-widget mb-4">
                     <div class="footer-logo mb-4">
-                        <a href="#"><img src="/assets/images/apg_logo_black_bg.png" alt="Image not found!" /></a>
+                        <a href="#"><img src="/assets/images/lplogo.png" alt="Lewis Properties" /></a>
                     </div>
-                    <p>At Address Property Group, our mission is to empower Australians in achieving financial freedom and security through strategic property investments.</p>
+                    <p>Lorem Ipsum is simply dummy text of
+                        the printing and typesetting industry.Lorem Ipsum is simply dummy text of
+                        the printing and typesetting industry.</p>
                 </div>
                 <div class="footer-widget media-widget mb-4">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -46,7 +48,7 @@
     <div class="container">
         <div class="row row-cols-md-2 row-cols-1">
             <div class="col">
-                <span class="text-white">© {{ date("Y")}} Address Property Group All right reserved</span>
+                <span class="text-white">© {{ date("Y")}} Lewis Properties All right reserved</span>
             </div>
             <div class="col">
                 <ul class="line-menu float-end list-color-gray">
@@ -61,5 +63,6 @@
 <!--============== Copyright Section End ==============-->
 
 <!-- Scroll to top -->
-<div class="scroll-top-vertical xs-mx-none" id="scroll">Go Top <i class="ms-2 fa-solid fa-arrow-right-long"></i></div>
+<div class="scroll-top-vertical xs-mx-none" id="scroll">Go Top <i class="ms-2 fa-solid fa-arrow-right-long"></i>
+</div>
 <!-- End Scroll To top -->

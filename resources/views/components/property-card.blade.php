@@ -21,10 +21,10 @@
             </div>
             <a href="{{ route($routeName, $item['id']) }}">
                 <img src="{{ $item['image_url'] ?? '/assets/images/no-image.png' }}"
-                     alt="{{ $item['type_title'] }}" 
+                     alt="{{ $item['type_title'] }}"
                      style="height: 250px;">
             </a>
-            <a href="{{ route('listings', ['type' => $item['type_title']]) }}" 
+            <a href="{{ route('listings', ['type' => $item['type_title']]) }}"
                class="listing-ctg text-white">
                 <i class="fa-solid fa-building"></i>
                 <span>{{ $item['type_title'] }}</span>
@@ -32,8 +32,8 @@
         </div>
         <div class="property_text p-4">
             <span class="listing-price">${{ $item['price'] }}<small> </small></span>
-            <h5 class="listing-title">
-                <a href="{{ route($routeName, $item['id']) }}">{{ $item['display_title'] }}</a>
+            <h5 class="listing-title" title="{{ $item['display_title'] }}">
+                <a href="{{ route($routeName, $item['id']) }}">{{ \Illuminate\Support\Str::limit($item['display_title'], 35) }}</a>
             </h5>
             <span class="listing-location">
                 <i class="fas fa-map-marker-alt"></i> {{ $item['address'] }}
@@ -53,18 +53,5 @@
                 </li>
             </ul>
         </div>
-        <div class="d-flex align-items-center post-meta mt-2 py-3 px-4 border-top">
-            <div class="agent">
-                <a href="javascript:void(0);" class="d-flex text-general align-items-center">
-                    <img class="rounded-circle me-2"
-                         src="{{ $item['agent_image'] }}"
-                         alt="{{ $item['agent_name'] }}">
-                    <span>{{ $item['agent_name'] }}</span>
-                </a>
-            </div>
-            <div class="post-date ms-auto">
-                <span>{{ $item['updated_at'] }}</span>
-            </div>
-        </div>
     </div>
-</div> 
+</div>
